@@ -3,35 +3,35 @@ on:
   workflow_dispatch:
     inputs:
       CPU:
-        description: "分支"
+        description: "branch"
         required: true
         default: 'sm8550'
       FEIL:
-        description: "配置文件"
+        description: "config_file"
         required: true
         default: 'oneplus_12r_v'
       CPUD:
-        description: "处理器代号"
+        description: "cpu_code_name"
         required: true
         default: 'kalama'
       ANDROID_VERSION:
-        description: "内核安卓版本"
+        description: "Android_Kernel_Version"
         required: true
         default: 'android13'
       KERNEL_VERSION:
-        description: "内核版本"
+        description: "Kernel_Version"
         required: true
         default: '5.15'
       KSUNEXT_ENABLED:
-        description: "添加 KSU Next"
+        description: "Add KSU Next"
         required: true
         type: boolean
-        default: false
+        default: true
       SUSFS_ENABLED:
-        description: "添加 SUSFS"
+        description: "Add SUSFS"
         required: true
         type: boolean
-        default: false
+        default: true
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -49,8 +49,8 @@ jobs:
           
       - name: Configure Git
         run: |
-         git config --global user.name "build"
-         git config --global user.email "3436378798@qq.com"
+         git config --global user.name "buildody"
+         git config --global user.email "bobkimjilis@gmail.com"
       - name: Install dependencies
         run: |
          sudo apt update && sudo apt upgrade -y
