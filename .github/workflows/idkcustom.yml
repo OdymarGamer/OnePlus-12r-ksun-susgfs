@@ -79,12 +79,12 @@ jobs:
          sed -i 's/CONFIG_LTO_CLANG_FULL=y/CONFIG_LTO_CLANG_THIN=y/' "./common/arch/arm64/configs/gki_defconfig"
          sed -i 's/CONFIG_LTO_CLANG_NONE=y/CONFIG_LTO_CLANG_THIN=y/' "./common/arch/arm64/configs/gki_defconfig"         
       
-      - name: Configure Kernel
-        working-directory: kernel_workspace/kernel_platform
-        run: |
+      - #name: Configure Kernel
+     #   working-directory: kernel_workspace/kernel_platform
+      #  run: |
           # Enable KPROBES for KernelSU
-          echo "CONFIG_KPROBES=y" >> ./common/arch/arm64/configs/gki_defconfig
-          echo "CONFIG_KSU_WITH_KPROBES=y" >> ./common/arch/arm64/configs/gki_defconfig
+      #    echo "CONFIG_KPROBES=y" >> ./common/arch/arm64/configs/gki_defconfig
+  #        echo "CONFIG_KSU_WITH_KPROBES=y" >> ./common/arch/arm64/configs/gki_defconfig
           
       - name: Set up KernelSU Next
         if: github.event.inputs.KSUNEXT_ENABLED == 'true'
@@ -143,7 +143,7 @@ jobs:
           echo "CONFIG_KSU_SUSFS_SPOOF_UNAME=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_KSU_SUSFS_ENABLE_LOG=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_KSU_SUSFS_OPEN_REDIRECT=y" >> ./common/arch/arm64/configs/gki_defconfig
-          echo "CONFIG_KSU_SUSFS_SUS_SU=n" >> ./common/arch/arm64/configs/gki_defconfig  
+          echo "CONFIG_KSU_SUSFS_SUS_SU=y" >> ./common/arch/arm64/configs/gki_defconfig  
           echo "CONFIG_TMPFS_XATTR=y" >> ./common/arch/arm64/configs/gki_defconfig
           
           # Remove defconfig check
