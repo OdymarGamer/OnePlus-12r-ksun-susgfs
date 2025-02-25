@@ -84,7 +84,7 @@ jobs:
         run: |
           # Enable KPROBES for KernelSU
           echo "CONFIG_KPROBES=n" >> ./common/arch/arm64/configs/gki_defconfig
-          echo "CONFIG_KSU_WITH_KPROBES=n" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_KSU_WITH_KPROBES=y" >> ./common/arch/arm64/configs/gki_defconfig
           
       - name: Set up KernelSU Next
         if: github.event.inputs.KSUNEXT_ENABLED == 'true'
