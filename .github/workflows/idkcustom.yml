@@ -1,4 +1,4 @@
-name: Build Kernel Next-SUSFS For OP12r
+name: Build Kernel Next-SUSFS For OP12r Like 50th try
 on:
   workflow_dispatch:
     inputs:
