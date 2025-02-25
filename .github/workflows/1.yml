@@ -83,7 +83,7 @@ jobs:
         working-directory: kernel_workspace/kernel_platform
         run: |
           # Enable KPROBES for KernelSU
-          echo "CONFIG_KPROBES=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_KPROBES=n" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_KSU_WITH_KPROBES=n" >> ./common/arch/arm64/configs/gki_defconfig
           
       - name: Set up KernelSU Next
