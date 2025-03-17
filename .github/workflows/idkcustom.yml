@@ -23,15 +23,15 @@ on:
         required: true
         default: '5.15'
       KSUNEXT_ENABLED:
-        description: "Add KSU Next"
+        description: "Add_KSU_Next"
+        required: true
+        type: boolean
+      SUSFS_ENABLED:  # Fixed indentation
+        description: "Add_SUSFS"
         required: true
         type: boolean
         default: true
-      SUSFS_ENABLED:
-        description: "Add SUSFS"
-        required: true
-        type: boolean
-        default: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
